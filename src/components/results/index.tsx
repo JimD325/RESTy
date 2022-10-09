@@ -4,6 +4,7 @@ function Results ({data}:any){
   return (
     
     <section>
+      Results
       <pre>{data ? JSON.stringify(data, undefined, 2) : null}</pre>
     </section>
   );
