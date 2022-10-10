@@ -1,12 +1,19 @@
-import React from 'react';
-
-function Header () {
-  return (
-    <header>
+export const Header = () => {
+  return(
+  <header>
       <h1>RESTy</h1>
     </header>
-  );
+    )
 }
+
+
+// function Header () {
+//   return (
+//     <header>
+//       <h1>RESTy</h1>
+//     </header>
+//   );
+// }
 
 // class Header extends React.Component {
 //   render() {
@@ -18,4 +25,4 @@ function Header () {
 //   }
 // }
 
-export default Header;
+// export default Header;

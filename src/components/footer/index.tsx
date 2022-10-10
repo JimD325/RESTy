@@ -1,7 +1,7 @@
-import React from 'react';
-
-const Footer = () => {
-    return <footer>&copy; Jim Doyle, 2022</footer>;
+export const Footer = () => {
+    return (
+        <footer>&copy; Jim Doyle, 2022</footer>
+    );
 }
 
 // class Footer extends React.Component {
@@ -10,4 +10,4 @@ const Footer = () => {
 //   }
 // }
 
-export default Footer;
+// export default Footer;

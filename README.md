@@ -30,3 +30,11 @@ Students will be creating and styling a Counter application. Look for the follow
 
 - The first and most important part of the lab assignment is to draw a process diagram of the starter code and state as events happen. Once the students understand that, they can move on.
 # RESTy
+
+### Testing Library
+![ReactTestingQueryTable](/img/ReactTestingQueryTable.PNG)
+- getBy will return the matching node for the query, throws error if no match
+- queryBy will return matching node for query, null if no match. Useful for asserting that an element is NOT present. 
+- FindBy returns a promise which will resolve when an element is found which matches the query. has 1000ms to return element, otherwise will throw error. 
+- By all returns an array if more than one match. 
+

@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 
 import './app.scss';
 
-import Header from './components/header';
-import Footer from './components/footer';
-import Form from './components/form';
-import Results from './components/results';
+import {Header} from './components/header';
+import {Footer} from './components/footer';
+import {Form} from './components/form';
+import {Results} from './components/results';
 
 
 

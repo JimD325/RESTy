@@ -3,7 +3,7 @@ import React from 'react';
 import './form.scss';
 
 
-function Form({handleApiCall}:any){
+export const Form = ({handleApiCall}:any) => {
   const handleSubmit = (e:React.FormEvent<HTMLFormElement>) =>{
     e.preventDefault();
     const formData = {
@@ -33,4 +33,3 @@ function Form({handleApiCall}:any){
 }
 
 
-export default Form;
