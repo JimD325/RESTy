@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Results ({data}:any){
+export const Results = ({data}:any) => {
   return (
     
     <section>
@@ -20,4 +20,4 @@ function Results ({data}:any){
 //   }
 // }
 
-export default Results;
+
