@@ -4,29 +4,36 @@ $radius: 40%;
 form {
   display: inline-block;
   margin: auto;
-  width:fit-content;
+  width: fit-content;
   background-color: beige;
-
+  padding: 2px;
   label {
     display: flex;
-    margin:auto;
+    margin: auto;
     padding: 15px;
     border-radius: 45%;
 
     &.methods {
       span {
-        margin-right: 1rem;
-        padding: .25rem .5rem;
+        margin-right: 2rem;
+        padding: .3rem .7rem;
         background: #ccc;
         border-radius: 45%;
-&.hover {
-          background-color: black !important;
+
+        &:hover {
+          background-color: rgb(255, 255, 255);
         }
+
         &:active {
+          transition-duration: 500ms;
+          background: rgb(0, 255, 255);
+        }
+        &:target {
           transition-duration: 150ms;
           background: #fff;
         }
-        
+
+
       }
     }
   }

@@ -1,40 +1,59 @@
 # Component Based UI
 
-## Lab Requirements
+## Lab 28 Requirements
+- Connect RESTy to live APIs to fetch and display remote data. Initial focus will be for GET requests. 
 
-Students will be creating and styling a Counter application. Look for the following attributes
+## User Story
+- As a user, I want to enter the URL to an API and issue a GET request so that I can retrieve it's data. 
+- as a user, I want to see the results returned from an API request in my browser in a readable format
 
-- `Header`, `Footer`, and `Counter` components to separate files
-- Properly `export` them as defaults
-- Import them into the `App` Component using ES6 `import` statement
-- Proper state management
-- Button Handlers
-  - Bonus if they can wire both buttons with one handler
+## Application Flow
+1. User enters an API URL
+2. Chooses a REST method
+3. Clicks the "Go" button
+4. Application fetches data from the given URL, with the method specified. 
+5. displays the response headers separately from the results
+6. both headers and results should be "pretty printed" JSON. 
 
-### Grading Standards & Notes
+## Technical requirements
+1. Refactor application methods to allow for browser side HTTP requests to be sent.
+    - this should allow for the user to set a URL, method, and request body.
+    - will use JavaScript's fetch
+2. Make sure all relevant request and response data is displayed to the user. 
 
-- Features
-  - As noted
-- Code Quality
-  - Looking for proper class syntax.
-  - Good file naming and folder structure.
-  - Styles well written, using SASS variables/nesting and thought through beyond simple colors.
-- Testing
-  - Not Required
-- Deployment
-  - Code Sandbox only.
-- Documentation
-  - Quality README
+## Testing
+- Will be done using React Testing Library Framework.
+- Assert than on Submission the form will result in data being rendered in the output area. 
+- Mock the API request with React Testing Library
 
-### Lab Assistance Notes
+## Deployment
+- Deploy application to GitHub pages uses GitHub actions which will publish the build to gh-pages branch of your repo an all check- ins. 
 
-- The first and most important part of the lab assignment is to draw a process diagram of the starter code and state as events happen. Once the students understand that, they can move on.
-# RESTy
+# Concepts explored/researched during this Project
+## Lab 28
+### [Using the Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- Simplest use of fetch simply takes the parth of the resource you want and returns a promise that resolves with a response object. 
+- that response object does not have the actual JSON response body, but a representation of the entire HTTP response. 
+- you extract the JSON body content from res object using the json() method, which returns a second promise which resolves with the result of a JSON. 
 
+## Lab 27
 ### Testing Library
 ![ReactTestingQueryTable](/img/ReactTestingQueryTable.PNG)
 - getBy will return the matching node for the query, throws error if no match
 - queryBy will return matching node for query, null if no match. Useful for asserting that an element is NOT present. 
 - FindBy returns a promise which will resolve when an element is found which matches the query. has 1000ms to return element, otherwise will throw error. 
 - By all returns an array if more than one match. 
+
+### [JavaScript Require vs Import](https://blog.bitsrc.io/javascript-require-vs-import-47827a361b77)
+- Both refer to JS dependencies
+- Require is typically used with NodeJS to read/execute CommonJS modules. 
+- Import was introduced in ES6, and we cannot use it outside of ES modules. 
+- Require statements can be called anywhere in the code, Import MUST be at the beginning
+- Require can be called conditionally, ie ```if(articleCount>0){
+   const getBlogTitle = require(‘./blogDetails.js’);
+}```
+- Require statements are treated as functions which are called at run time, while import statements are static and cannot be used conditionally or dynamically. 
+- Import statements are asynchronous. If you use require, modules will be loaded and processed one by one. Import performs well compared to require in large scale applications. 
+- ES modules are the future, but many NodeJS modules and libraries are written with CommonJS so you can't just NOT use require. 
+
 

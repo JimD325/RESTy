@@ -1,21 +1,20 @@
-import React from 'react';
-
 import './form.scss';
 
+const handleSubmit = (e:any, callback: Function) => {
+  e.preventDefault();
+  console.log('handle sub e.target', e)
+  const formData = {
+    method:'GET',
+    url: e.target[0].value//'https://pokeapi.co/api/v2/pokemon',
+  };
+  callback(formData);
+}
 
-export const Form = ({handleApiCall}:any) => {
-  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) =>{
-    e.preventDefault();
-    const formData = {
-      method:'GET',
-      url: 'https://pokeapi.co/api/v2/pokemon',
-    };
-    return handleApiCall(formData);
-  }
-
+export const Form = (props:any) => {
+  console.log("Props on FORM ---->", props);
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) =>handleSubmit(e, props.APICall)}>
         <label >
           <span>Enter URL: </span>
           <input name='url' type='text' />
