@@ -1,6 +1,46 @@
 # Component Based UI
 
-## Lab 28 Requirements
+# Lab 29 Track History
+## Requirements
+- track every API call and store it in history
+
+## User Story
+- As a user, I want to see a list of my previous API calls, so that I can see the results again
+
+## Application Flow
+1. User enters an API URL
+2. Chooses a REST method
+3. Clicks the "Go" Button
+4. application fetches data from the URL given, with the method specified
+5. Application stores the API request and returned data into state.
+    - updates the list of previous API calls. 
+6. Application deplays the response headers and results separately. 
+    - both headers and results should be "pretty printed" JSON
+
+## Techincal Requirements
+1. Replace any component state managements to use derived state from useReducer with a reducer function and an initial state. 
+
+## Deployment
+- Deploy application to GitHub Pages useing a GitHub action which will publish the build to the ```gh-pages``` branch of your repo on all check-ins. 
+
+## Additional Goals
+- Store the history in local storage as well as in state
+- when the app loads, use an effect to read from local storage and put that history into your state right away. 
+
+# concepts researched during lab 29
+### [Typescript Interfaces](https://www.typescriptlang.org/docs/handbook/interfaces.html)
+- In TypeScript, checking the type focuses on the "shape" that values have. 
+- This is called "duck typing", and says that an object is of a given type if it has all methods and properties required by that type. 
+- in typescript, interface is used to name the types of objects based on their shape. 
+
+### [useReducer Hook](https://reactjs.org/docs/hooks-reference.html#usereducer)
+- Is alternative to useState
+- accepts a reducer of type ```(state, action) => newState```
+- Where state is current state, action is what you are doing to the current state, and newState is the result of the action being applied to the current state. 
+- useReducer is best used when you have very complex state logic, or when the next state depends on the previous one. 
+ 
+# Lab 28
+## Requirements
 - Connect RESTy to live APIs to fetch and display remote data. Initial focus will be for GET requests. 
 
 ## User Story
